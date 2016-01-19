@@ -39,6 +39,7 @@ public class LogQuery extends LogQuerySupport implements LogQueryMBean {
     @Override
     public LogResults queryLogResults(LogFilter filter) {
         Predicate<PaxLoggingEvent> predicate = Logs.createPredicate(filter);
+        System.err.println(predicate.toString());
         int count = -1;
         if (filter != null) {
             count = filter.getCount();

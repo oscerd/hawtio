@@ -1,5 +1,7 @@
 package io.hawt.log.support;
 
+import org.apache.commons.lang3.StringUtils;
+
 public final class Objects {
 
     public static boolean isBlank(String text) {
@@ -47,7 +49,7 @@ public final class Objects {
 
     public static boolean contains(String matchesText, String... values) {
         for (String v : values) {
-            if (v != null && v.contains(matchesText)) {
+            if (v != null && StringUtils.containsIgnoreCase(v, matchesText)) {
                 return true;
             }
         }
